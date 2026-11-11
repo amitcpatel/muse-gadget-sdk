@@ -1,0 +1,7 @@
+# Local overlay (not upstream): make USB Serial/JTAG the primary console so
+# app printf/@status/@chat replies reach the host over USB on the
+# Waveshare ESP32-S3-Touch-AMOLED-1.75C. Same line sibling boards carry
+# (sdkconfig.muse-waveshare-s3-lcd19, sdkconfig.muse-m5stack-cores3).
+# Without it the primary console is UART0 (unpopulated pins on this board):
+# host->board commands work, board->host replies vanish.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
